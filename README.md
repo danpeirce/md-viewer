@@ -1,32 +1,32 @@
-md-viewer
-=========
+# md-viewer
 
-A HTML5 Markdown viewer that automatically refreshes the page as you work. This was motivated by wanting to
-work on Markdown files in Vim without having to manually reload them all the time, and is similar in concept
-to [Dillinger](http://dillinger.io/). Dillinger is great, but I'd prefer to work directly on my files rather
-than through a github or dropbox.
+A HTML5 portable Markdown viewer.
 
 md-viewer uses the Markdown.Converter class from [PageDown](https://code.google.com/p/pagedown/) to perform
 Markdown to HTML conversion.
 
-Currently this is very much in alpha and is something I hacked together in an evening. It's good enough to be
-useful to me right now, so it might not move much further.
+## Using md-viewer
 
-Using md-viewer
-===============
-To use md-viewer, simply open it in a browser (so far only tested in Chrome), open your Markdown file in the
-file picker, and start writing. As you work, your file will be automatically reloaded as HTML in the browser.
+On a PC store the markdown file in the same folder as 
 
-Reloading only happens when the file is saved to. This prevents constant reloading of your page, which would
-prevent scrolling in overflowing block elements and inspecting some parts of the HTML. Furthermore, reloading
-may be manually paused and resumed using the very crude pause/resume anchors at the top of the page - next to
-the reload delay input. Speaking of which, the delay between reloads, in milliseconds, may be set at the top
-of the page.
+* md-viewer.html
+* md-viewer.css
+* GitHubFlavor.css
+* Markdown.Converter.js
 
-Styling is controlled by `md-viewer.css`. The default style imports `foghorn.css`, which has been gratefully
-stolen from [jasonm23](https://github.com/jasonm23/markdown-css-themes), and adds a few modifications.
+To use md-viewer on Windows 11, simply open **md-viewer.html** in a browser (so far only tested in Chrome and Firefox on Windows11).
+Don't know what platform the author used it on but the automatic reloading has not worked for me.
 
-License
-=======
+If stored on a ESP32 all the files except the markdown file should be in the same folder on the ESP32. The browse button on the md-viewer PC browser page
+will allow one to load a markdown file from the PC.
+
+I have used it both as a local file on windows 11 and served from a ESP32 WiFi webserver. 
+See [https://github.com/danpeirce/ESP32_OTA_FILESYS](https://github.com/danpeirce/ESP32_OTA_FILESYS)
+
+Styling is controlled by `md-viewer.css`. The default style imports **GitHubFlavor.css**, which was taken from
+[https://github.com/ajmcmiddlin/md-viewer](https://github.com/ajmcmiddlin/md-viewer).
+
+## License
+
 md-viewer is available under the [MIT license](http://opensource.org/licenses/mit-license.php), the same as
 PageDown/Mardown.Converter.
